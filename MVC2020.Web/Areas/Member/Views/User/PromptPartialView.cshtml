@@ -1,0 +1,23 @@
+﻿@model MVC2020.Web.Areas.Member.Models.Prompt
+
+
+
+@*自定义网页对话框 - 部分视图复用*@
+
+
+<div class="panel panel-default">
+    <div class="panel-heading"><div class="panel-title">@Model.Title</div></div>
+    <div class="panel-body">
+        <p>@Html.Raw(Model.Message)</p>
+        @if(Model.Buttons != null && Model.Buttons.Count > 0)
+        {
+            <p>
+                @foreach(var item in Model.Buttons)
+                {
+                    @Html.Raw(item + "&nbsp;&nbsp;")
+
+                }
+            </p>
+        }
+    </div>
+</div>
